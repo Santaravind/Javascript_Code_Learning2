@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM_manipulation.</title>
+</head>
+<body>
+    <h1 onclick="changeText(this)">Click on this text!</h1>
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+    <button  class="button">
+Click Me!</button>
+
+</body>
+<script>
+    
+
+    document.querySelector('.button').style.color = 'red'
+
+    function changeText(id){
+        id.innerHTML="Ooops!";
+    }
+//ADD ELEMENT
+
+     function addLanguage (langName){
+      const li=document.createElement('li')
+      li.innerHTML=`${langName}`;
+      document.querySelector('.language').appendChild(li)
+     }
+
+     addLanguage("python")
+     addLanguage("Java")
+
+    function addOptilanguage(langName){
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li);
+            }
+        addOptilanguage('golang');    
+        addOptilanguage('c++');    
+// EDIT
+     const secondLang =document.querySelector("li:nth-child(2)")
+     const newli=document.createElement('li');
+     newli.textContent="mojo"
+     secondLang.replaceWith(newli);
+
+     //edit
+     const secondLa=document.querySelector('li:first-child');
+     secondLa.outerHTML='<li>TypeScript</li>'
+
+    //  const newl=document.createElement('li')
+    //  newl.textContent="App";
+    //  secondLa.replaceWith(newl)
+
+    //remove
+
+    const lastlang=document.querySelector('li:last-child')
+    lastlang.remove();
+
+      
+
+     </script>
+</html>
