@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM|chaiourcode</title>
+</head>
+<body style="background-color: black; color: white; font-size: 20px;">
+    <div class="parant">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+        <div class="day">Sunday</div>
+    </div>
+    
+
+<script>
+    const parent=document.querySelector('.parant');
+  
+    // ALL CODE IS WORKING BUT ONLY LEANIG PERPOSE SO COMMENT
+    // console.log(parent)
+    // console.log(parent.children)
+    // console.log(parent.children[0].innerHTML)
+
+    // for (let I = 0; I < parent.children.length; I++) {
+    //     console.log(parent.children[I].innerHTML)
+        
+    // }
+
+    parent.children[0].style.color="orange";
+
+    for (let i = 1; i < parent.children.length; i++) {
+        console.log(parent.children[i].style.color="green")
+    }
+
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    const dayOne=document.querySelector('.day');
+    // console.log(dayOne.innerHTML);
+    // console.log(dayOne.parentElement);
+    // console.log(dayOne.nextElementSibling);
+
+    console.log("NODE",parent.childNodes)
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+</script></body>
+</html>
