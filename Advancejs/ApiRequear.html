@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <div class="photo">
+
+    </div>
+    hii 
+</body>
+<script>
+    const requestUrl='https://api.github.com/users/hiteshchoudhary'
+     
+     let follower;
+     let photo;
+
+     const xhr=new XMLHttpRequest();
+     xhr.open('GET',requestUrl);
+     xhr.onreadystatechange=function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState===4){
+            const data=JSON.parse(this.responseText)
+            console.log(typeof data)
+             follower= data.followers;  
+             console.log(follower) ;
+             photo=data.avtar_url;
+             console.log(" ",photo)
+
+             //for page
+             const body= document.querySelector('.photo');
+        
+        body.innerHTML=`
+         <div style="border:2px solid red; width:250x; height:250px;">
+            <h2>name:${data.name}</h2>
+          <p> Followers:${follower}</p>
+          
+          </div>
+        `
+        }
+     }
+     xhr.send();
+
+    
+    
+
+    
+
+</script>
+</html>
